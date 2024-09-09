@@ -8,7 +8,6 @@ import java.util.Optional;
 public class Main {
     public static void main(String[] args) {
         Optional<Connection> conn = DBConnection.getConnection();
-        Optional<Connection> concn = DBConnection.getConnection();
 
     }
 }
