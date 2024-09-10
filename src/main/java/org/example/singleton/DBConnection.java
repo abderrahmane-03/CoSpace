@@ -17,7 +17,7 @@ public class DBConnection {
     // Load environment variables
     private static Dotenv dotenv = Dotenv.load();
 
-    public static Optional<Connection> getConnection() {
+    public static Connection getConnectionOrThrow() throws SQLException {
         if (connection.isEmpty()) {
             String url = dotenv.get("DB_URL");
             String user = dotenv.get("DB_USER");
@@ -28,9 +28,10 @@ public class DBConnection {
                         DriverManager.getConnection(url, user, password));
             } catch (SQLException ex) {
                 LOGGER.log(Level.SEVERE, null, ex);
+                throw ex;
             }
         }
 
-        return connection;
+        return connection.orElseThrow(() -> new SQLException("Unable to establish a database connection"));
     }
 }
