@@ -17,8 +17,8 @@ public class SubscriptionRepositoryIMP implements SubscriptionRepository {
     }
 
     @Override
-    public void save(Subscription entity) {
-
+    public Subscription save(Subscription subscription) {
+        return subscription;
     }
 
     @Override

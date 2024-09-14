@@ -17,8 +17,8 @@ public class FavoriteRepositoryIMP implements FavoriteRepository {
     }
 
     @Override
-    public void save(Favorite entity) {
-
+    public Favorite save(Favorite favoritre) {
+        return favoritre;
     }
 
     @Override

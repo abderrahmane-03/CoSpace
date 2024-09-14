@@ -1,4 +1,4 @@
-package org.example.Service;
+package org.example.Service.IMP;
 
 import org.example.Repository.INF.FeedbackRepository;
 import org.example.entities.Feedback;

@@ -2,6 +2,7 @@ package org.example.Repository.IMP;
 
 import org.example.Repository.INF.EventRepository;
 import org.example.entities.Event;
+import org.example.entities.Organizer;
 import org.example.singleton.DBConnection;
 
 import java.sql.*;
@@ -43,7 +44,7 @@ public class EventRepositoryIMP implements EventRepository {
     }
 
     @Override
-    public void save(Event event) {
+    public Event save(Event event) {
         String query = "INSERT INTO events (event_id, event_name, event_type, organizer_id, date, location, capacity) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = DBConnection.getConnectionOrThrow();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -55,8 +56,10 @@ public class EventRepositoryIMP implements EventRepository {
             statement.setString(6, event.getLocation());
             statement.setInt(7, event.getCapacity());
             statement.executeUpdate();
+            return event;
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
     }
 

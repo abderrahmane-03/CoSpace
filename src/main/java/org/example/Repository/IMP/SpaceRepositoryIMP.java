@@ -20,8 +20,8 @@ public class SpaceRepositoryIMP implements SpaceRepository {
     }
 
     @Override
-    public void save(Space entity) {
-
+    public Space save(Space space) {
+        return space;
     }
 
     @Override

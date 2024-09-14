@@ -1,10 +1,13 @@
 package org.example.entities;
 
+import org.example.enums.Role;
+
 public class Admin extends User {
     private String adminLevel;
 
-    public Admin(String userId, String name, String email, String password, String role, String adminLevel) {
-        super(userId, name, email, password, role);
+    public Admin(int userId, String firstname, String lastname, String email, String address, String password, Role role, boolean isPasswordHashed, String adminLevel) {
+        // Add profilepicture, passing a default value such as "default.png"
+        super(userId, firstname, lastname, email, address, "default.png", password,isPasswordHashed, role);
         this.adminLevel = adminLevel;
     }
 

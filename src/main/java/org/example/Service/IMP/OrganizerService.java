@@ -1,4 +1,4 @@
-package org.example.Service;
+package org.example.Service.IMP;
 
 import org.example.Repository.INF.OrganizerRepository;
 import org.example.entities.Organizer;
@@ -15,8 +15,9 @@ public class OrganizerService {
     }
 
     // Method to create a new organizer
-    public void createOrganizer(Organizer organizer) {
+    public boolean createOrganizer(Organizer organizer) {
         organizerRepository.save(organizer);
+        return true;
     }
 
     // Method to get organizer by ID

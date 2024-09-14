@@ -17,8 +17,8 @@ public class BookingRepositoryIMP implements BookingRepository {
     }
 
     @Override
-    public void save(Booking entity) {
-
+    public Booking save(Booking booking) {
+             return booking;
     }
 
     @Override

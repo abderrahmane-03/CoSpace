@@ -17,8 +17,8 @@ public class AdditionalServiceRepositoryIMP implements AdditionalServiceReposito
     }
 
     @Override
-    public void save(AdditionalService entity) {
-
+    public AdditionalService save(AdditionalService additionalService) {
+        return additionalService;
     }
 
     @Override

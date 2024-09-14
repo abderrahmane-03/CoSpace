@@ -19,8 +19,8 @@ public class AdminRepositoryIMP implements AdminRepository {
     }
 
     @Override
-    public void save(Admin entity) {
-
+    public Admin save(Admin admin) {
+return admin;
     }
 
     @Override

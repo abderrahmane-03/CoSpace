@@ -1,4 +1,4 @@
-package org.example.Service;
+package org.example.Service.IMP;
 
 import org.example.Repository.INF.SubscriptionRepository;
 import org.example.entities.Subscription;

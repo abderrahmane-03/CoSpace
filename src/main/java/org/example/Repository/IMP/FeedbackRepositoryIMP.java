@@ -42,7 +42,7 @@ public class FeedbackRepositoryIMP implements FeedbackRepository {
     }
 
     @Override
-    public void save(Feedback feedback) {
+    public Feedback save(Feedback feedback) {
         String query = "INSERT INTO feedback (feedback_id, member_id, event_id, feedback_text, rating) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DBConnection.getConnectionOrThrow();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -52,8 +52,10 @@ public class FeedbackRepositoryIMP implements FeedbackRepository {
             statement.setString(4, feedback.getFeedbackText());
             statement.setInt(5, feedback.getRating());
             statement.executeUpdate();
+            return feedback;
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
     }
 

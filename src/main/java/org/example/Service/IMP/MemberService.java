@@ -1,22 +1,23 @@
-package org.example.Service;
+package org.example.Service.IMP;
 
-import org.example.Repository.INF.MemberRepository;
+import org.example.Repository.IMP.MemberRepositoryIMP;
 import org.example.entities.Member;
 
 import java.util.List;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository;
+    private final MemberRepositoryIMP memberRepository;
 
     // Constructor injection for the repository
-    public MemberService(MemberRepository memberRepository) {
+    public MemberService(MemberRepositoryIMP memberRepository) {
         this.memberRepository = memberRepository;
     }
 
     // Method to create a new member
-    public void createMember(Member member) {
-        memberRepository.save(member);
+    public boolean createMember(Member member) {
+        memberRepository.save(member);  // Use the instance of memberRepository to call the non-static method
+        return true;
     }
 
     // Method to get member by ID

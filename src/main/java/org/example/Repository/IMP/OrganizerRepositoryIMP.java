@@ -18,8 +18,8 @@ public class OrganizerRepositoryIMP implements OrganizerRepository {
     }
 
     @Override
-    public void save(Organizer entity) {
-
+    public Organizer save(Organizer organizer) {
+        return organizer;
     }
 
     @Override
